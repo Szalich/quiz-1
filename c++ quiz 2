@@ -1,0 +1,113 @@
+#include <iostream>
+using namespace std;
+
+void Sum(int num[], int length);
+void Multi(int num[], int length);
+void Avg(int num[], int length);
+void Max(int num[], int length);
+void Min(int num[], int length);
+void Range(int num[], int length);
+
+int main()
+{
+    int num[5];
+
+    cout << "Enter 5 numbers: ";
+
+    for(int i = 0; i < 5; i++)
+    {
+        cin >> num[i];
+    }
+
+    Sum(num, 5);
+    Multi(num, 5);
+    Avg(num, 5);
+    Max(num, 5);
+    Min(num, 5);
+    Range(num, 5);
+
+    return 0;
+}
+
+void Sum(int num[], int length)
+{
+    int sum = 0;
+
+    for(int i = 0; i < length; i++)
+    {
+        sum += num[i];
+    }
+
+    cout << "Sum = " << sum << endl;
+}
+
+void Multi(int num[], int length)
+{
+    int mult = 1;
+
+    for(int i = 0; i < length; i++)
+    {
+        mult *= num[i];
+    }
+
+    cout << "Multiplication = " << mult << endl;
+}
+
+void Avg(int num[], int length)
+{
+    double sum = 0;
+
+    for(int i = 0; i < length; i++)
+    {
+        sum += num[i];
+    }
+
+    cout << "Average = " << sum / length << endl;
+}
+
+void Max(int num[], int length)
+{
+    int max = num[0];
+
+    for(int i = 1; i < length; i++)
+    {
+        if(num[i] > max)
+        {
+            max = num[i];
+        }
+    }
+
+    cout << "Maximum = " << max << endl;
+}
+
+void Min(int num[], int length)
+{
+    int min = num[0];
+
+    for(int i = 1; i < length; i++)
+    {
+        if(num[i] < min)
+        {
+            min = num[i];
+        }
+    }
+
+    cout << "Minimum = " << min << endl;
+}
+
+void Range(int num[], int length)
+{
+    int max = num[0];
+    int min = num[0];
+
+    for(int i = 1; i < length; i++)
+    {
+        if(num[i] > max)
+            max = num[i];
+
+        if(num[i] < min)
+            min = num[i];
+    }
+
+    cout << "Range = " << max - min << endl;
+}
